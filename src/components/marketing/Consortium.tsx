@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
+import Image from "next/image"
 
 const MEMBERS = [
   {
@@ -9,6 +10,7 @@ const MEMBERS = [
     name: "George Shanine",
     title: "Founder & CEO",
     description: "$30M EBITDA Company. Exit of multiple companies $50M+",
+    headshot: "/headshots/george-shanine.jpg",
     ypo: true,
   },
   {
@@ -16,6 +18,7 @@ const MEMBERS = [
     name: "Dan Fischer",
     title: "Founder & Investor",
     description: "Gaming & Entertainment \u00B7 Multi-state Lottery Operations",
+    headshot: "/headshots/dan-fischer.jpg",
     ypo: true,
   },
   {
@@ -23,6 +26,7 @@ const MEMBERS = [
     name: "Chuck Hare",
     title: "Founder & Entrepreneur",
     description: "$80M+ exit \u00B7 Beverage & Transportation",
+    headshot: null,
     ypo: true,
   },
   {
@@ -30,6 +34,7 @@ const MEMBERS = [
     name: "Dick Abraham",
     title: "Founder & Investor",
     description: "Urgent Care \u00B7 Hospital Systems \u00B7 Healthcare",
+    headshot: null,
     ypo: false,
   },
   {
@@ -37,6 +42,7 @@ const MEMBERS = [
     name: "Paul Weinhold",
     title: "President & Chairman",
     description: "Nonprofit Leadership \u00B7 Banking & Finance",
+    headshot: "/headshots/paul-weinhold.jpg",
     ypo: false,
   },
   {
@@ -44,6 +50,7 @@ const MEMBERS = [
     name: "Mike Hoffmann",
     title: "Founder & Serial Entrepreneur",
     description: "Vending \u00B7 AI Services \u00B7 Coaching & Community",
+    headshot: "/headshots/mike-hoffmann.jpg",
     ypo: true,
   },
 ]
@@ -76,9 +83,21 @@ export function Consortium() {
               transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
               className="border border-border rounded-lg p-5 text-center micro-card bg-card"
             >
-              <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-3">
-                {member.number}
-              </div>
+              {member.headshot ? (
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mx-auto mb-3 ring-2 ring-border">
+                  <Image
+                    src={member.headshot}
+                    alt={member.name}
+                    width={128}
+                    height={128}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ) : (
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-primary text-primary-foreground flex items-center justify-center text-sm font-bold mx-auto mb-3">
+                  {member.number}
+                </div>
+              )}
               <p className="text-sm font-bold text-foreground mb-0.5">
                 {member.name}
               </p>
