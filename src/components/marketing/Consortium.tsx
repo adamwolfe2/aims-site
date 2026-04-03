@@ -34,7 +34,7 @@ const MEMBERS = [
     name: "Dick Abraham",
     title: "Founder & Investor",
     description: "Urgent Care \u00B7 Hospital Systems \u00B7 Healthcare",
-    headshot: null,
+    headshot: "/headshots/dick-abraham.jpg",
     ypo: false,
   },
   {
