@@ -78,7 +78,7 @@ export function Agents() {
                 className="bg-card border border-border rounded-lg p-6 card-hover"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#333] flex items-center justify-center">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark flex items-center justify-center">
                     <Icon className="w-4.5 h-4.5 text-primary" />
                   </div>
                   <div>

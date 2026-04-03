@@ -52,7 +52,7 @@ export function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="#contact"
-            className="hidden sm:inline-flex items-center bg-primary text-primary-foreground text-xs font-bold px-6 py-2.5 uppercase tracking-wider rounded-sm hover:bg-[hsl(0,70%,40%)] transition-colors btn-lift"
+            className="hidden sm:inline-flex items-center bg-primary text-primary-foreground text-xs font-bold px-6 py-2.5 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors btn-lift"
           >
             Book a Strategy Call
           </Link>
@@ -83,7 +83,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="block w-full text-center bg-primary text-primary-foreground text-xs font-bold px-4 py-3 uppercase tracking-wider rounded-sm hover:bg-[hsl(0,70%,40%)] transition-colors"
+                className="block w-full text-center bg-primary text-primary-foreground text-xs font-bold px-4 py-3 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors"
               >
                 Book a Strategy Call
               </Link>

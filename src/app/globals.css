@@ -7,8 +7,10 @@
     /* AIMS Operator System — Red & White Professional */
     --crimson: 0 70% 35%;
     --crimson-dark: 0 70% 28%;
-    --dark: 0 0% 20%;
-    --dark-deep: 0 0% 13%;
+    --crimson-light: 0 70% 45%;
+    --dark: 0 0% 22%;
+    --dark-deep: 0 0% 7%;
+    --dark-surface: 0 0% 18%;
 
     /* Background */
     --background: 0 0% 100%;

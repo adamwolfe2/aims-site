@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export function Footer() {
   return (
     <footer className="py-6 px-4 sm:px-6 border-t border-border">
@@ -7,7 +9,15 @@ export function Footer() {
           <span className="font-semibold text-foreground">Modern Amenities LLC</span>
           {" "}&middot; All Rights Reserved
         </p>
-        <p>aimanagingservices.com</p>
+        <div className="flex items-center gap-4">
+          <Link href="/privacy" className="hover:text-foreground transition-colors">
+            Privacy
+          </Link>
+          <Link href="/terms" className="hover:text-foreground transition-colors">
+            Terms
+          </Link>
+          <span>aimanagingservices.com</span>
+        </div>
       </div>
     </footer>
   )
