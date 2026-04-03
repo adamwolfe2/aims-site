@@ -79,7 +79,6 @@
     @apply tracking-tight;
   }
 
-  /* Premium selection color */
   ::selection {
     background: hsl(var(--primary) / 0.15);
     color: hsl(var(--foreground));
@@ -87,7 +86,7 @@
 }
 
 @layer utilities {
-  /* Eyebrow label */
+  /* ── Eyebrow label ───────────────────────────────────────────── */
   .eyebrow {
     font-family: var(--font-dm-mono), monospace;
     text-transform: uppercase;
@@ -95,6 +94,33 @@
     font-size: 0.7rem;
     font-weight: 500;
     color: hsl(var(--primary));
+  }
+
+  /* ── Dot Grid Background ─────────────────────────────────────── */
+  .dot-grid {
+    background-image: radial-gradient(circle, rgba(0, 0, 0, 0.08) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+  .dot-grid-dark {
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  /* ── Grain Texture Overlay ───────────────────────────────────── */
+  .grain::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    opacity: 0.025;
+    pointer-events: none;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ── Vignette fade for hero ──────────────────────────────────── */
+  .vignette {
+    background:
+      radial-gradient(ellipse 120% 80% at 50% 40%, transparent 50%, rgba(255,255,255,0.7) 100%);
   }
 
   /* ── Logo Ticker ─────────────────────────────────────────────── */
@@ -208,7 +234,6 @@
     border-radius: inherit;
   }
 
-  /* ── Smooth section transitions ──────────────────────────────── */
   section {
     position: relative;
   }

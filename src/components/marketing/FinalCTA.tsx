@@ -11,7 +11,7 @@ export function FinalCTA() {
   return (
     <section
       ref={ref}
-      className="py-20 sm:py-28 px-4 sm:px-6 bg-dark-deep text-white"
+      className="py-20 sm:py-28 px-4 sm:px-6 bg-dark-deep dot-grid-dark text-white"
     >
       <div className="mx-auto max-w-3xl text-center">
         <motion.div
