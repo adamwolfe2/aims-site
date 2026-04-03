@@ -26,7 +26,7 @@ const MEMBERS = [
     name: "Chuck Hare",
     title: "Founder & Entrepreneur",
     description: "$80M+ exit \u00B7 Beverage & Transportation",
-    headshot: null,
+    headshot: "/headshots/chuck-hare.png",
     ypo: true,
   },
   {
