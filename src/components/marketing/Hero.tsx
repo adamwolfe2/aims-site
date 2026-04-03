@@ -31,7 +31,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-4xl sm:text-5xl lg:text-[3.75rem] font-extrabold leading-[1.08] text-foreground mb-8 sm:mb-10 max-w-4xl"
+          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] text-foreground mb-8 sm:mb-10 max-w-3xl"
         >
           AI transformation built by operators who&rsquo;ve{" "}
           <span className="text-primary">done it in their own companies</span>
