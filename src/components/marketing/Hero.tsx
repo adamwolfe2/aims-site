@@ -2,17 +2,21 @@
 
 import Link from "next/link"
 import { motion } from "framer-motion"
+import { DotGrid } from "./DotGrid"
 
 export function Hero() {
   return (
-    <section className="relative bg-white dot-grid pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 overflow-hidden">
+    <section className="relative bg-white pt-28 sm:pt-36 pb-20 sm:pb-28 px-4 sm:px-6 overflow-hidden">
+      {/* Interactive dot grid canvas */}
+      <DotGrid />
+
       {/* Vignette fade so grid dissolves at edges */}
-      <div className="absolute inset-0 vignette pointer-events-none" />
+      <div className="absolute inset-0 vignette pointer-events-none" style={{ zIndex: 1 }} />
 
       {/* Bottom fade into next section */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" style={{ zIndex: 1 }} />
 
-      <div className="relative mx-auto max-w-5xl">
+      <div className="relative mx-auto max-w-5xl" style={{ zIndex: 2 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}

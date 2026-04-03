@@ -1,65 +1,71 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import Script from "next/script"
 
 export function CalEmbed() {
   const [loaded, setLoaded] = useState(false)
 
   useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    /* eslint-disable @typescript-eslint/no-explicit-any, prefer-rest-params */
     const w = window as any
+    if (w.__calBootstrapped) return
+    w.__calBootstrapped = true
 
-    function initCal() {
-      w.Cal("init", "aims", { origin: "https://app.cal.com" })
+    // Exact Cal.com bootstrap from their official snippet
+    ;(function (C: any, A: string, L: string) {
+      const p = function (a: any, ar: any) { a.q.push(ar) }
+      C.Cal = C.Cal || function () {
+        const cal = C.Cal
+        const ar = arguments
+        if (!cal.loaded) {
+          cal.ns = {}
+          cal.q = cal.q || []
+          cal.loaded = true
+        }
+        if (ar[0] === L) {
+          const api: any = function () { p(api, arguments) }
+          const namespace = ar[1]
+          api.q = api.q || []
+          if (typeof namespace === "string") {
+            cal.ns[namespace] = cal.ns[namespace] || api
+            p(cal.ns[namespace], ar)
+            p(cal, ["initNamespace", namespace])
+          } else p(cal, ar)
+          return
+        }
+        p(cal, ar)
+      }
+    })(w, "https://app.cal.com/embed/embed.js", "init")
 
-      w.Cal.ns.aims("inline", {
-        elementOrSelector: "#my-cal-inline-aims",
-        config: {
-          layout: "month_view",
-          useSlotsViewOnSmallScreen: "true",
-          theme: "light",
-        },
-        calLink: "adamwolfe/aims",
-      })
+    w.Cal("init", "aims", { origin: "https://app.cal.com" })
 
-      w.Cal.ns.aims("ui", {
-        theme: "light",
-        cssVarsPerTheme: {
-          light: { "cal-brand": "#981B1B" },
-        },
-        hideEventTypeDetails: true,
+    w.Cal.ns.aims("inline", {
+      elementOrSelector: "#my-cal-inline-aims",
+      config: {
         layout: "month_view",
-      })
+        useSlotsViewOnSmallScreen: "true",
+        theme: "light",
+      },
+      calLink: "adamwolfe/aims",
+    })
 
-      setTimeout(() => setLoaded(true), 1500)
-    }
-
-    if (w.Cal && w.Cal.loaded) {
-      initCal()
-      return
-    }
-
-    w.Cal = function () {
-      const cal = w.Cal
-      if (!cal.q) cal.q = []
-      cal.q.push(arguments)
-    }
-    w.Cal.q = []
-    w.Cal.ns = {}
-    w.Cal.loaded = false
-
-    const script = document.createElement("script")
-    script.src = "https://app.cal.com/embed/embed.js"
-    script.async = true
-    script.onload = () => {
-      w.Cal.loaded = true
-      initCal()
-    }
-    document.head.appendChild(script)
+    w.Cal.ns.aims("ui", {
+      theme: "light",
+      cssVarsPerTheme: { light: { "cal-brand": "#981B1B" } },
+      hideEventTypeDetails: true,
+      layout: "month_view",
+    })
+    /* eslint-enable */
   }, [])
 
   return (
     <>
+      <Script
+        src="https://app.cal.com/embed/embed.js"
+        strategy="lazyOnload"
+        onLoad={() => setTimeout(() => setLoaded(true), 1200)}
+      />
       {!loaded && (
         <div className="p-6 sm:p-10 space-y-6 animate-pulse">
           <div className="flex items-center justify-between">
