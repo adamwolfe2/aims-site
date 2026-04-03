@@ -34,7 +34,7 @@ export function Hero() {
         >
           AI transformation built by operators who&rsquo;ve{" "}
           <span className="text-crimson-light">done it in their own companies</span>
-          {" "}&mdash; not consultants who theorize about it.
+          {" "}not consultants who theorize about it.
         </motion.h1>
 
         <motion.p
@@ -54,7 +54,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
         >
           <Link
-            href="#contact"
+            href="/book"
             className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-8 py-3.5 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors btn-lift"
           >
             Book a Strategy Call

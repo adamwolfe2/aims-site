@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | AIMS",
   },
   description:
-    "AI transformation built by operators who've done it in their own companies — not consultants who theorize about it. AIMS installs a proven AI operating system inside your company.",
+    "AI transformation built by operators who've done it in their own companies not consultants who theorize about it. AIMS installs a proven AI operating system inside your company.",
   openGraph: {
     type: "website",
     locale: "en_US",

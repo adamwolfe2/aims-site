@@ -10,7 +10,7 @@ const AGENTS = [
     name: "CEO 2.0",
     icon: Brain,
     description:
-      "Live reporting CEO dashboard plus an AI agent trained on executive knowledge \u2014 giving employees instant access to CEO-level insight without taking up the CEO\u2019s time.",
+      "Live reporting CEO dashboard plus an AI agent trained on executive knowledge \u2013 giving employees instant access to CEO-level insight without taking up the CEO\u2019s time.",
     result: null,
   },
   {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Navbar } from "@/components/marketing/Navbar"
 import { Hero } from "@/components/marketing/Hero"
+import { LogoTicker } from "@/components/marketing/LogoTicker"
 import { Stats } from "@/components/marketing/Stats"
 import { Engagement } from "@/components/marketing/Engagement"
 import { Agents } from "@/components/marketing/Agents"
@@ -11,7 +12,7 @@ import { Footer } from "@/components/marketing/Footer"
 export const metadata: Metadata = {
   title: "AIMS - AI Operator System | For Operators, By Operators",
   description:
-    "AI transformation built by operators who've done it in their own companies — not consultants who theorize about it.",
+    "AI transformation built by operators who've done it in their own companies not consultants who theorize about it.",
   alternates: { canonical: "https://aimanagingservices.com" },
 }
 
@@ -38,6 +39,7 @@ export default function HomePage() {
       <Navbar />
       <main>
         <Hero />
+        <LogoTicker />
         <Stats />
         <Engagement />
         <Agents />

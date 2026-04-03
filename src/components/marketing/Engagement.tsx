@@ -14,7 +14,7 @@ const PHASES = [
     number: "2",
     name: "Operator Enablement\u2122",
     description:
-      "We deploy Operator Proven Agents into your highest-impact areas first \u2014 and ensure your team actually adopts them. Implementation plus enablement across your first department in a 90-day sprint.",
+      "We deploy Operator Proven Agents into your highest-impact areas first \u2013 and ensure your team actually adopts them. Implementation plus enablement across your first department in a 90-day sprint.",
   },
   {
     number: "3",
@@ -39,7 +39,7 @@ export function Engagement() {
         >
           <p className="eyebrow mb-3">The Engagement</p>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-foreground leading-snug max-w-xl">
-            A phased system &mdash; not an open-ended consulting engagement
+            A phased system, not an open-ended consulting engagement
           </h2>
         </motion.div>
 

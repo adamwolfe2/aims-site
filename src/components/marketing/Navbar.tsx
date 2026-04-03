@@ -51,7 +51,7 @@ export function Navbar() {
 
           {/* Desktop CTA */}
           <Link
-            href="#contact"
+            href="/book"
             className="hidden sm:inline-flex items-center bg-primary text-primary-foreground text-xs font-bold px-6 py-2.5 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors btn-lift"
           >
             Book a Strategy Call
@@ -81,7 +81,7 @@ export function Navbar() {
           >
             <div className="px-4 py-4">
               <Link
-                href="#contact"
+                href="/book"
                 onClick={() => setMobileOpen(false)}
                 className="block w-full text-center bg-primary text-primary-foreground text-xs font-bold px-4 py-3 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors"
               >
