@@ -1,7 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
+import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
 
 const STATS = [
@@ -38,7 +37,7 @@ export function Stats() {
               transition={{ duration: 0.5, delay: i * 0.12 }}
               className="text-center px-4 sm:px-8"
             >
-              <p className="text-4xl sm:text-5xl font-bold text-primary mb-2 font-serif">
+              <p className="text-4xl sm:text-5xl font-extrabold text-primary mb-2">
                 {stat.value}
               </p>
               <p className="text-xs font-bold uppercase tracking-wider text-foreground mb-1">

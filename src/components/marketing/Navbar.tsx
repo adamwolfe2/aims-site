@@ -20,27 +20,27 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-200",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
           ? "bg-white/95 backdrop-blur-md border-b border-border shadow-sm"
           : "bg-white"
       )}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <div className="flex h-16 sm:h-18 items-center justify-between gap-4">
+        <div className="flex h-16 sm:h-20 items-center justify-between gap-4">
 
           {/* Logo + Tagline */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0">
             <Image
               src="/logo.png"
               alt="AIMS"
-              width={40}
-              height={40}
-              className="object-contain h-9 w-9 sm:h-10 sm:w-10"
+              width={512}
+              height={487}
+              className="object-contain h-9 w-auto sm:h-10"
               priority
             />
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold tracking-tight text-foreground leading-none">
+              <span className="text-lg sm:text-xl font-extrabold tracking-tight text-foreground leading-none">
                 AIMS
               </span>
               <span className="eyebrow text-[0.55rem] sm:text-[0.6rem] leading-none mt-0.5">
@@ -52,7 +52,7 @@ export function Navbar() {
           {/* Desktop CTA */}
           <Link
             href="#contact"
-            className="hidden sm:inline-flex items-center bg-primary text-primary-foreground text-xs font-bold px-5 py-2.5 uppercase tracking-wider rounded-sm hover:bg-primary/90 transition-colors btn-lift"
+            className="hidden sm:inline-flex items-center bg-primary text-primary-foreground text-xs font-bold px-6 py-2.5 uppercase tracking-wider rounded-sm hover:bg-[hsl(0,70%,40%)] transition-colors btn-lift"
           >
             Book a Strategy Call
           </Link>
@@ -83,7 +83,7 @@ export function Navbar() {
               <Link
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
-                className="block w-full text-center bg-primary text-primary-foreground text-xs font-bold px-4 py-3 uppercase tracking-wider rounded-sm"
+                className="block w-full text-center bg-primary text-primary-foreground text-xs font-bold px-4 py-3 uppercase tracking-wider rounded-sm hover:bg-[hsl(0,70%,40%)] transition-colors"
               >
                 Book a Strategy Call
               </Link>

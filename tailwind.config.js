@@ -58,21 +58,6 @@ module.exports = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-dm-mono)", "monospace"],
-        serif: ["var(--font-playfair)", "Georgia", "serif"],
-      },
-      keyframes: {
-        "fade-up": {
-          from: { opacity: "0", transform: "translateY(32px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-        "count-up": {
-          from: { opacity: "0", transform: "translateY(8px)" },
-          to: { opacity: "1", transform: "translateY(0)" },
-        },
-      },
-      animation: {
-        "fade-up": "fade-up 0.6s ease-out forwards",
-        "count-up": "count-up 0.6s ease-out forwards",
       },
     },
   },

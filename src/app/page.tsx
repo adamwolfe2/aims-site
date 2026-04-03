@@ -1,25 +1,11 @@
 import type { Metadata } from "next"
-import dynamic from "next/dynamic"
 import { Navbar } from "@/components/marketing/Navbar"
 import { Hero } from "@/components/marketing/Hero"
+import { Stats } from "@/components/marketing/Stats"
+import { EngagementAgents } from "@/components/marketing/EngagementAgents"
+import { Consortium } from "@/components/marketing/Consortium"
+import { FinalCTA } from "@/components/marketing/FinalCTA"
 import { Footer } from "@/components/marketing/Footer"
-
-const Stats = dynamic(
-  () => import("@/components/marketing/Stats").then(m => ({ default: m.Stats })),
-  { loading: () => <div className="py-20" /> }
-)
-const EngagementAgents = dynamic(
-  () => import("@/components/marketing/EngagementAgents").then(m => ({ default: m.EngagementAgents })),
-  { loading: () => <div className="py-20" /> }
-)
-const Consortium = dynamic(
-  () => import("@/components/marketing/Consortium").then(m => ({ default: m.Consortium })),
-  { loading: () => <div className="py-20" /> }
-)
-const FinalCTA = dynamic(
-  () => import("@/components/marketing/FinalCTA").then(m => ({ default: m.FinalCTA })),
-  { loading: () => <div className="py-20" /> }
-)
 
 export const metadata: Metadata = {
   title: "AIMS - AI Operator System | For Operators, By Operators",
