@@ -16,7 +16,7 @@ export function Hero() {
       {/* Bottom fade into next section */}
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent pointer-events-none" style={{ zIndex: 1 }} />
 
-      <div className="relative mx-auto max-w-5xl" style={{ zIndex: 2 }}>
+      <div className="relative mx-auto max-w-5xl pointer-events-none" style={{ zIndex: 2 }}>
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
@@ -56,7 +56,7 @@ export function Hero() {
         >
           <Link
             href="/book"
-            className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-8 py-3.5 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors btn-lift"
+            className="pointer-events-auto inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-8 py-3.5 uppercase tracking-wider rounded-sm hover:bg-crimson-dark transition-colors btn-lift"
           >
             Book a Strategy Call
           </Link>
