@@ -87,7 +87,8 @@ export function CalEmbed() {
       )}
       <div
         id="my-cal-inline-aims"
-        style={{ width: "100%", height: "100%", minHeight: loaded ? 550 : 0, overflow: "auto" }}
+        className={loaded ? "" : "h-0 overflow-hidden"}
+        style={{ width: "100%" }}
       />
     </>
   )

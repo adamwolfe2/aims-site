@@ -30,9 +30,7 @@ export default function BookPage() {
           </p>
         </div>
 
-        <div className="border border-border rounded-lg overflow-hidden bg-card shadow-sm">
-          <CalEmbed />
-        </div>
+        <CalEmbed />
       </div>
     </div>
   )
