@@ -78,8 +78,8 @@ export function Agents() {
                 className="bg-card border border-border rounded-lg p-6 card-hover"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-dark flex items-center justify-center">
-                    <Icon className="w-4.5 h-4.5 text-primary" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-white border border-border flex items-center justify-center shadow-sm">
+                    <Icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <p className="eyebrow text-[0.6rem] mb-0.5">{agent.category}</p>
