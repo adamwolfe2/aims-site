@@ -2,7 +2,8 @@ import type { Metadata } from "next"
 import { Navbar } from "@/components/marketing/Navbar"
 import { Hero } from "@/components/marketing/Hero"
 import { Stats } from "@/components/marketing/Stats"
-import { EngagementAgents } from "@/components/marketing/EngagementAgents"
+import { Engagement } from "@/components/marketing/Engagement"
+import { Agents } from "@/components/marketing/Agents"
 import { Consortium } from "@/components/marketing/Consortium"
 import { FinalCTA } from "@/components/marketing/FinalCTA"
 import { Footer } from "@/components/marketing/Footer"
@@ -38,7 +39,8 @@ export default function HomePage() {
       <main>
         <Hero />
         <Stats />
-        <EngagementAgents />
+        <Engagement />
+        <Agents />
         <Consortium />
         <FinalCTA />
       </main>

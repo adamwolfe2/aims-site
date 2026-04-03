@@ -1,60 +1,100 @@
 "use client"
 
-import Link from "next/link"
 import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 
 export function FinalCTA() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: "-60px" })
 
+  useEffect(() => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const w = window as any
+
+    function initCal() {
+      w.Cal("init", "aims", { origin: "https://app.cal.com" })
+
+      w.Cal.ns.aims("inline", {
+        elementOrSelector: "#my-cal-inline-aims",
+        config: {
+          layout: "month_view",
+          useSlotsViewOnSmallScreen: "true",
+          theme: "light",
+        },
+        calLink: "adamwolfe/aims",
+      })
+
+      w.Cal.ns.aims("ui", {
+        theme: "light",
+        cssVarsPerTheme: {
+          light: { "cal-brand": "#981B1B" },
+        },
+        hideEventTypeDetails: true,
+        layout: "month_view",
+      })
+    }
+
+    if (w.Cal) {
+      initCal()
+      return
+    }
+
+    // Bootstrap Cal.com embed loader
+    w.Cal = function () {
+      const cal = w.Cal
+      if (!cal.q) cal.q = []
+      cal.q.push(arguments)
+    }
+    w.Cal.q = []
+    w.Cal.ns = {}
+    w.Cal.loaded = false
+
+    const script = document.createElement("script")
+    script.src = "https://app.cal.com/embed/embed.js"
+    script.async = true
+    script.onload = () => initCal()
+    document.head.appendChild(script)
+    w.Cal.loaded = true
+  }, [])
+
   return (
     <section
       ref={ref}
       id="contact"
-      className="py-20 sm:py-28 px-4 sm:px-6 bg-[#111] text-white"
+      className="py-16 sm:py-24 px-4 sm:px-6"
     >
-      <div className="mx-auto max-w-3xl text-center">
-        <motion.h2
+      <div className="mx-auto max-w-6xl">
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl lg:text-5xl font-extrabold mb-5 leading-tight"
+          className="text-center mb-10 sm:mb-14"
         >
-          Start with an Operator Diagnostic&trade;
-        </motion.h2>
-
-        <motion.p
-          initial={{ opacity: 0, y: 16 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="text-base sm:text-lg text-white/50 mb-10 max-w-xl mx-auto"
-        >
-          A fixed-scope AI audit delivered by the operators who built these systems
-          for their own companies.
-        </motion.p>
+          <p className="eyebrow mb-3">Get Started</p>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground mb-4 leading-tight">
+            Start with an Operator Diagnostic&trade;
+          </h2>
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto">
+            A fixed-scope AI audit delivered by the operators who built these systems
+            for their own companies.
+          </p>
+        </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.5, delay: 0.15 }}
+          className="border border-border rounded-lg overflow-hidden bg-card shadow-sm"
         >
-          <Link
-            href="#contact"
-            className="inline-flex items-center bg-primary text-primary-foreground text-sm font-bold px-10 py-4 uppercase tracking-wider rounded-sm hover:bg-[hsl(0,70%,40%)] transition-colors btn-lift"
-          >
-            Book a Strategy Call
-          </Link>
+          <div
+            id="my-cal-inline-aims"
+            style={{ width: "100%", height: "100%", minHeight: 500, overflow: "auto" }}
+          />
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          className="mt-8 text-sm text-white/30"
-        >
+        <p className="mt-6 text-center text-xs text-muted-foreground">
           aimanagingservices.com
-        </motion.p>
+        </p>
       </div>
     </section>
   )
