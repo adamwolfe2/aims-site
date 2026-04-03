@@ -31,12 +31,14 @@ export const metadata: Metadata = {
     title: "AIMS - AI Operator System | For Operators, By Operators",
     description:
       "AI transformation built by operators who've done it in their own companies. AIMS installs a proven AI operating system inside your company.",
+    images: [{ url: "/og-image.png", width: 2806, height: 1638 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "AIMS - AI Operator System",
     description:
       "AI transformation built by operators who've done it in their own companies.",
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/logo.png",
