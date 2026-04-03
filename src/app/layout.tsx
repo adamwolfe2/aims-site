@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "AIMS - AI Operator System | For Operators, By Operators",
     description:
       "AI transformation built by operators who've done it in their own companies. AIMS installs a proven AI operating system inside your company.",
-    images: [{ url: "/og-image.png", width: 2806, height: 1638 }],
+    images: [{ url: "/og-image.png", width: 1400, height: 800 }],
   },
   twitter: {
     card: "summary_large_image",
