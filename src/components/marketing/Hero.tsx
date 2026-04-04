@@ -33,8 +33,8 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] text-foreground mb-8 sm:mb-10 max-w-3xl"
         >
-          AI Operating Systems and Solutions Built by{" "}
-          <span className="text-primary">$30M-$80M+ Founders</span>,
+          AI Operating Systems Built By{" "}
+          <span className="text-primary">Real Operators</span>,
           Deployed Inside Your Company
         </motion.h1>
 
