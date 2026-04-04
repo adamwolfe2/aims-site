@@ -64,6 +64,14 @@ export function Stats() {
   return (
     <section ref={ref} className="py-16 sm:py-20 bg-secondary border-y border-border">
       <div className="mx-auto max-w-5xl px-4 sm:px-6">
+        <motion.h2
+          initial={{ opacity: 0, y: 16 }}
+          animate={inView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center text-2xl sm:text-3xl font-extrabold text-foreground mb-10 sm:mb-12"
+        >
+          Real Case Studies by Real Companies
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-0 sm:divide-x sm:divide-border">
           {STATS.map((stat, i) => (
             <motion.div
