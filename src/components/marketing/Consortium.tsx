@@ -81,7 +81,7 @@ export function Consortium() {
               initial={{ opacity: 0, y: 16 }}
               animate={inView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: 0.1 + i * 0.06 }}
-              className="border border-border rounded-lg p-5 text-center micro-card bg-card"
+              className="border border-border rounded-lg p-5 text-center micro-card bg-card flex flex-col"
             >
               {member.headshot ? (
                 <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full overflow-hidden mx-auto mb-3 ring-2 ring-border">
@@ -104,16 +104,18 @@ export function Consortium() {
               <p className="eyebrow text-[0.55rem] sm:text-[0.6rem] mb-2 leading-tight">
                 {member.title}
               </p>
-              <p className="text-xs text-muted-foreground leading-relaxed mb-3">
+              <p className="text-xs text-muted-foreground leading-relaxed mb-3 flex-1">
                 {member.description}
               </p>
-              {member.ypo ? (
-                <span className="inline-block bg-primary text-primary-foreground text-[0.55rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm">
-                  YPO Member
-                </span>
-              ) : (
-                <div className="h-5" />
-              )}
+              <div className="mt-auto pt-1">
+                {member.ypo ? (
+                  <span className="inline-block bg-primary text-primary-foreground text-[0.55rem] font-bold uppercase tracking-wider px-2.5 py-1 rounded-sm">
+                    YPO Member
+                  </span>
+                ) : (
+                  <div className="h-5" />
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
