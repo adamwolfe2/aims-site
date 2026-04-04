@@ -2,10 +2,18 @@
 
 import { motion, useInView } from "framer-motion"
 import { useRef } from "react"
-import { Brain, TrendingUp, Settings, PenTool, Phone } from "lucide-react"
+import { Brain, TrendingUp, Settings, PenTool, Phone, type LucideIcon } from "lucide-react"
+
+type Agent = {
+  category: string
+  name: string
+  icon: LucideIcon
+  description: string
+  result: string | null
+}
 
 // Top row: the 3 agents with results
-const TOP_ROW = [
+const TOP_ROW: Agent[] = [
   {
     category: "Content Production",
     name: "Marketing Content Creator",
@@ -33,7 +41,7 @@ const TOP_ROW = [
 ]
 
 // Bottom row: 2 agents without results, centered
-const BOTTOM_ROW = [
+const BOTTOM_ROW: Agent[] = [
   {
     category: "Executive Intelligence",
     name: "CEO 2.0",
@@ -52,7 +60,7 @@ const BOTTOM_ROW = [
   },
 ]
 
-function AgentCard({ agent, index, inView }: { agent: typeof TOP_ROW[0] & { result: string | null }; index: number; inView: boolean }) {
+function AgentCard({ agent, index, inView }: { agent: Agent; index: number; inView: boolean }) {
   const Icon = agent.icon
   return (
     <motion.div
