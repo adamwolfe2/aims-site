@@ -10,7 +10,7 @@ import { FinalCTA } from "@/components/marketing/FinalCTA"
 import { Footer } from "@/components/marketing/Footer"
 
 export const metadata: Metadata = {
-  title: "AIMS - AI Operator System | For Operators, By Operators",
+  title: "AIMS - AI Operating Systems For Operators, By Operators",
   description:
     "AI transformation built by operators who've done it in their own companies not consultants who theorize about it.",
   alternates: { canonical: "https://aimanagingservices.com" },

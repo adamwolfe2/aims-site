@@ -18,7 +18,7 @@ const dmMono = DM_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://aimanagingservices.com"),
   title: {
-    default: "AIMS - AI Operator System | For Operators, By Operators",
+    default: "AIMS - AI Operating Systems For Operators, By Operators",
     template: "%s | AIMS",
   },
   description:
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://aimanagingservices.com",
     siteName: "AIMS",
-    title: "AIMS - AI Operator System | For Operators, By Operators",
+    title: "AIMS - AI Operating Systems For Operators, By Operators",
     description:
       "AI transformation built by operators who've done it in their own companies. AIMS installs a proven AI operating system inside your company.",
     images: [{ url: "/og-image.png", width: 1400, height: 800 }],
