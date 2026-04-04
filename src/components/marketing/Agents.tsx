@@ -52,7 +52,7 @@ const BOTTOM_ROW = [
   },
 ]
 
-function AgentCard({ agent, index, inView }: { agent: typeof TOP_ROW[0]; index: number; inView: boolean }) {
+function AgentCard({ agent, index, inView }: { agent: typeof TOP_ROW[0] & { result: string | null }; index: number; inView: boolean }) {
   const Icon = agent.icon
   return (
     <motion.div
