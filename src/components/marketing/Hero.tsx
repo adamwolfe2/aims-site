@@ -33,9 +33,9 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.1 }}
           className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.12] text-foreground mb-8 sm:mb-10 max-w-3xl"
         >
-          AI transformation built by operators who&rsquo;ve{" "}
-          <span className="text-primary">done it in their own companies</span>
-          {" "}not consultants who theorize about it.
+          AI Operating Systems and Solutions Built by{" "}
+          <span className="text-primary">$30M-$80M+ Founders</span>,
+          Deployed Inside Your Company
         </motion.h1>
 
         <motion.p
